@@ -8,9 +8,11 @@ export interface ToggleMenuButtonProps {
   colorOpen?: string;
   colorClose?: string;
   width?: number;
-  spaceBetweenBorder?: string;
-  borderWidth?: number;
+  spaceBetweenBars?: string;
+  barThickness?: number;
   animationDuration?: string;
+  mobileWidth?: number;
+  mobileBarThickness?: number;
 }
 
 export function ToggleMenuButton(props: ToggleMenuButtonProps): JSX.Element {
@@ -20,19 +22,23 @@ export function ToggleMenuButton(props: ToggleMenuButtonProps): JSX.Element {
     colorOpen = 'black',
     colorClose = 'black',
     width = 40,
-    spaceBetweenBorder = '35%',
-    borderWidth = 3,
+    spaceBetweenBars = '35%',
+    barThickness = 3,
     animationDuration = '0.3s',
+    mobileBarThickness = 2,
+    mobileWidth = 30,
   } = props;
 
   return (
     <MenuButton
+      $mobileWidth={mobileWidth}
+      $mobileBarThickness={mobileBarThickness}
       $isMenuOpen={isMenuOpen}
       $colorOpen={colorOpen}
       $colorClose={colorClose}
       $width={width}
-      $spaceBetweenBorder={spaceBetweenBorder}
-      $borderWidth={borderWidth}
+      $spaceBetweenBars={spaceBetweenBars}
+      $barThickness={barThickness}
       $animationDuration={animationDuration}
       onClick={() => setIsMenuOpen(!isMenuOpen)}
     >
@@ -49,9 +55,11 @@ interface StyledProps {
   $colorOpen: string;
   $colorClose: string;
   $width: number;
-  $spaceBetweenBorder: string;
-  $borderWidth: number;
+  $spaceBetweenBars: string;
+  $barThickness: number;
   $animationDuration: string;
+  $mobileWidth: number;
+  $mobileBarThickness: number;
 }
 
 const MenuButton = styled.a`
@@ -62,6 +70,11 @@ const MenuButton = styled.a`
   justify-content: center;
   overflow: hidden;
 
+  @media (max-width: 750px) {
+    height: ${(props: StyledProps) => props.$mobileWidth}px;
+    width: ${(props: StyledProps) => props.$mobileWidth}px;
+  }
+
   &:hover {
     cursor: pointer;
   }
@@ -69,7 +82,7 @@ const MenuButton = styled.a`
   .container {
     position: relative;
     height: ${(props: StyledProps) =>
-      props.$isMenuOpen ? '100%' : props.$spaceBetweenBorder};
+      props.$isMenuOpen ? '100%' : props.$spaceBetweenBars};
     width: 100%;
 
     .topBorder,
@@ -78,12 +91,16 @@ const MenuButton = styled.a`
       content: '';
       display: block;
       width: 100%;
-      height: ${(props: StyledProps) => props.$borderWidth}px;
+      height: ${(props: StyledProps) => props.$barThickness}px;
       background-color: ${(props: StyledProps) =>
         props.$isMenuOpen ? props.$colorOpen : props.$colorClose};
       transform: translateY(-50%) rotate(0);
       transition-duration: ${(props: StyledProps) => props.$animationDuration};
       transition-property: transform, background-color;
+
+      @media (max-width: 750px) {
+        height: ${(props: StyledProps) => props.$mobileBarThickness}px;
+      }
     }
 
     .topBorder {
