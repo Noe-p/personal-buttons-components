@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export interface ToggleMenuButtonProps {
   isMenuOpen: boolean;
-  setIsMenuOpen: (ele: boolean) => void;
+  onClick: () => void;
 
   colorOpen?: string;
   colorClose?: string;
@@ -18,7 +18,7 @@ export interface ToggleMenuButtonProps {
 export function ToggleMenuButton(props: ToggleMenuButtonProps): JSX.Element {
   const {
     isMenuOpen,
-    setIsMenuOpen,
+    onClick,
     colorOpen = 'black',
     colorClose = 'black',
     width = 40,
@@ -40,7 +40,7 @@ export function ToggleMenuButton(props: ToggleMenuButtonProps): JSX.Element {
       $spaceBetweenBars={spaceBetweenBars}
       $barThickness={barThickness}
       $animationDuration={animationDuration}
-      onClick={() => setIsMenuOpen(!isMenuOpen)}
+      onClick={onClick}
     >
       <div className="container">
         <div className={`topBorder ${isMenuOpen ? 'isOpen' : ''}`} />

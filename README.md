@@ -21,12 +21,12 @@ export function Button(): JSX.Element {
 }
 ```
 
-### R**equired** Props
+### Required Props
 
 | Props | Type | Description |
 | --- | --- | --- |
 | isMenuOpen | boolean | Boolean to change button state |
-| setIsMenuOpen | function(value: boolean) | Function to change button state |
+| onClick | function(value: boolean) | Function to change button state |
 
 ### Optional Props
 

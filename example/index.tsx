@@ -9,7 +9,10 @@ const App = () => {
 
   return (
     <div>
-      <ToggleMenuButton isMenuOpen={isOpen} setIsMenuOpen={setIsOpen} />
+      <ToggleMenuButton
+        isMenuOpen={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
+      />
     </div>
   );
 };
