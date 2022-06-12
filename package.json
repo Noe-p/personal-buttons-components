@@ -1,8 +1,12 @@
 {
-  "version": "1.3.0",
+  "version": "1.4.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noe-p/personal-buttons-components.git"
+  },
   "files": [
     "dist",
     "src"
