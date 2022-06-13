@@ -1,13 +1,9 @@
-# React Buttons Components
-
-## Installation
-
 ```jsx
 yarn add @noe-p/react-buttons-components
 ```
-## ToggleButtons
+# ToggleButtons
 
-### Usage
+## Usage
 
 ```jsx
 import { ToggleMenuButton } from '@noe-p/react-buttons-components';
@@ -19,7 +15,7 @@ export function Button(): JSX.Element {
 }
 ```
 
-### ToggleMenuButton
+## ToggleMenuButton
 
 ![](https://github.com/Noe-p/gif-server/blob/main/ToggleMenuButtonComponent.gif?raw=true)
 
@@ -44,7 +40,7 @@ export function Button(): JSX.Element {
 | mobileWidth | 30 | number | Mobile width and height (it’s a square) of the component (px) |
 | mobileBarThickness | 2 | number | Mobile bar thickness (px) |
 
-### ToggleTextButton
+## ToggleTextButton
 
 ![](https://github.com/Noe-p/gif-server/blob/main/ToggleTextComponent.gif?raw=true)
 
