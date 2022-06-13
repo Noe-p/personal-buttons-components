@@ -1,3 +1,5 @@
+# Installation
+
 ```jsx
 yarn add @noe-p/react-buttons-components
 ```
@@ -14,6 +16,8 @@ export function Button(): JSX.Element {
   return <ToggleMenuButton isMenuOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />;
 }
 ```
+
+---
 
 ## ToggleMenuButton
 
@@ -39,6 +43,8 @@ export function Button(): JSX.Element {
 | animationDuration | 0.3s | string | Animation duration |
 | mobileWidth | 30 | number | Mobile width and height (it’s a square) of the component (px) |
 | mobileBarThickness | 2 | number | Mobile bar thickness (px) |
+
+---
 
 ## ToggleTextButton
 
