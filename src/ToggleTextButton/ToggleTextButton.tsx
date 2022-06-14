@@ -100,7 +100,9 @@ interface StyledProps {
 }
 
 const Main = styled.div`
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   :hover {
     cursor: pointer;
@@ -108,8 +110,8 @@ const Main = styled.div`
 
   .textOpen,
   .textClose {
-    position: absolute;
     display: flex;
+    position: absolute;
 
     p {
       margin: 0;
@@ -135,7 +137,7 @@ const Main = styled.div`
 
   .textClose {
     p {
-      ${(props: StyledProps) => props.$closeColor};
+      color: ${(props: StyledProps) => props.$closeColor};
       opacity: ${(props: StyledProps) => (props.$isMenuOpen ? '1' : '0')};
       animation: ${(props: StyledProps) =>
         props.$isMenuOpen ? 'translateYToBottom' : 'translateYToTop'};
