@@ -74,13 +74,13 @@ export function ToggleTextButton(props: ToggleTextButtonProps): JSX.Element {
       style={style}
     >
       <div className="textOpen">
-        {textOpenArray.map(letter => (
-          <p>{letter}</p>
+        {textOpenArray.map((letter, i) => (
+          <p key={i}>{letter}</p>
         ))}
       </div>
       <div className="textClose">
-        {textCloseArray.map(letter => (
-          <p>{letter}</p>
+        {textCloseArray.map((letter, i) => (
+          <p key={i}>{letter}</p>
         ))}
       </div>
     </Main>
@@ -112,6 +112,7 @@ const Main = styled.div`
   .textClose {
     display: flex;
     position: absolute;
+    transform: translateX(-50%);
 
     p {
       margin: 0;
